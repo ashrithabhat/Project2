@@ -1,5 +1,7 @@
 package seleniumexamples;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,11 +15,9 @@ public class FacebookExample {
 		System.setProperty("webdriver.chrome.driver", "C:\\Ashritha\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.facebook.com/");
-		
+		driver.manage().timeouts().implicitlyWait(1000,TimeUnit.SECONDS);	
 		driver.manage().window().maximize();
 		driver.findElement(By.xpath("//a[@class=\"_42ft _4jy0 _6lti _4jy6 _4jy2 selected _51sy\"]")).click();
-		
-		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@name=\"firstname\"]")).sendKeys("John");
 		driver.findElement(By.xpath("//input[@name=\"lastname\"]")).sendKeys("Disilva");
 		driver.findElement(By.xpath("//input[@name=\"reg_email__\"]")).sendKeys("abcd123@gmail.com");
@@ -28,17 +28,14 @@ public class FacebookExample {
 		WebElement date = driver.findElement(By.xpath("//select[@name=\"birthday_day\"]"));
 		Select sel = new Select(date);
 		sel.selectByIndex(15);
-		Thread.sleep(1000);
 		
 		WebElement month = driver.findElement(By.xpath("//select[@name=\"birthday_month\"]"));
 		Select sel1 = new Select(month);
 		sel1.selectByIndex(3);
-		Thread.sleep(1000);
 		
 		WebElement year = driver.findElement(By.xpath("//select[@name=\"birthday_year\"]"));
 		Select sel2 = new Select(year);
 		sel2.selectByVisibleText("2001");
-		Thread.sleep(1000);
 	
 		driver.findElement(By.xpath("//input[@value=\"2\"]")).click();
 		driver.findElement(By.xpath("//button[@name=\"websubmit\"]")).click();
