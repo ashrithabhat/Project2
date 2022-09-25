@@ -15,5 +15,7 @@ public class Hrm {
 		driver.findElement(By.name("username")).sendKeys("Admin");
 		driver.findElement(By.name("password")).sendKeys("admin123");
 		driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")).click();
+		driver.findElement(By.xpath("//span[@class=\"oxd-userdropdown-tab\"]")).click();
+		driver.findElement(By.xpath("//li[4]/a[@class=\"oxd-userdropdown-link\"]")).click();
 	}
 }
