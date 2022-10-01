@@ -1,14 +1,11 @@
-package pk1;
+package package1;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-
-public class HrmApplication {
+public class HrmApplicationTestng {
 	private static WebDriver driver = null;
 	@Test
 	public void login() throws InterruptedException {
@@ -27,5 +24,6 @@ public class HrmApplication {
 
 		driver.findElement(By.xpath("//span[@class=\"oxd-userdropdown-tab\"]")).click();
 		driver.findElement(By.xpath("//li[4]/a[@class=\"oxd-userdropdown-link\"]")).click();
+		driver.quit();
 	}
 }

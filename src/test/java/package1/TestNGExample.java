@@ -1,4 +1,4 @@
-package pk1;
+package package1;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -10,8 +10,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class TestNGExampleTest {
-
+public class TestNGExample {
 	@Test
     public void testCase1() {
            System.out.println("in test case 1");
@@ -62,5 +61,4 @@ public class TestNGExampleTest {
     public void afterSuite() {
            System.out.println("in afterSuite");
     }
-
 }
